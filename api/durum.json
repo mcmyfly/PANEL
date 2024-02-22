@@ -1,0 +1,128 @@
+[
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Belirtilmemiş",
+    "Value": "0"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Anne",
+    "Value": "1"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Baba",
+    "Value": "2"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Kardeş",
+    "Value": "3"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Çocuk",
+    "Value": "4"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Büyükanne",
+    "Value": "5"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Büyükbaba",
+    "Value": "6"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Eş",
+    "Value": "7"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Diğer",
+    "Value": "8"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Arkadaş",
+    "Value": "9"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Komşu",
+    "Value": "10"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Torun",
+    "Value": "11"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Amca",
+    "Value": "12"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Hala",
+    "Value": "13"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Dayı",
+    "Value": "14"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Teyze",
+    "Value": "15"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Hekim",
+    "Value": "16"
+  },
+  {
+    "Disabled": false,
+    "Group": null,
+    "Selected": false,
+    "Text": "Diğer Sağlık Personelleri",
+    "Value": "17"
+  }
+]

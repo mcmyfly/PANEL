@@ -1,0 +1,230 @@
+<?php
+if (empty($_SESSION)){session_start();}
+$conn = new mysqli("localhost", "root", "", "relaxservices");
+if ($conn->connect_error) {
+  header("Location: bakim.jsp");
+}
+$stmt = $conn->prepare(sprintf("SELECT * FROM users WHERE token = ?"));
+$stmt->bind_param('s', $_SESSION["token"]);
+$stmt->execute();
+$result = $stmt->get_result();
+$rows = $result->num_rows;
+$user = $result->fetch_assoc();
+$admin = $user["admin"];
+
+$one->inc_side_overlay           = 'inc/backend/views/inc_side_overlay.php';
+$one->inc_sidebar                = 'inc/backend/views/inc_sidebar.php';
+$one->inc_header                 = 'inc/backend/views/inc_header.php';
+$one->inc_footer                 = 'inc/backend/views/inc_footer.php';
+$one->l_m_content                = 'narrow';
+
+
+
+$one->main_nav                   = array(
+
+    array(
+        'name'  => 'Anasayfa',
+        'icon'  => 'fa fa-moon',
+        'url'   => 'dashboard.php'
+    ),                    
+    array(
+        'name'  => 'Mernis 2023',
+        'icon'  => 'fa fa-search        ',
+        'sub'   => array(
+            array(
+                'name'  => 'Ad Soyad',
+                'url'   => 'ad-soyad.jsp'
+            ),
+            array(
+                'name'  => 'Ad Soyad Filtreli',
+                'url'   => 'ad-soyad2.jsp'
+            ),
+             
+            array(
+                'name'  => 'TCKN Sorgu',
+                'url'   => 'tcsorgu.jsp'
+            ),            
+            array(
+                'name'  => 'Aile Sorgu',
+                'url'   => 'ailesorgu.jsp'
+            ),
+            array(
+                'name'  => 'Sülale Sorgu',
+                'url'   => 'akraba-sorgu.jsp'
+            ),           
+            array(
+                'name'  => 'Plaka Sorgu',
+                'url'   => 'plaka.jsp'
+            ),  
+             array(
+                'name'  => 'Parsel Sorgu',
+                'url'   => 'parsel-sorgu.jsp'
+            ),
+              array(
+                'name'  => 'Adres Sorgu',
+                'url'   => 'adres-sorgu.jsp'
+            ),
+              array(
+                'name'  => 'E-Okul Sorgu',
+                'url'   => 'eokul.jsp'
+            ),
+            array(
+                'name'  => 'AOL Vesika Sorgu',
+                'url'   => 'aolsorgu.jsp'
+            ),
+			 array(
+                'name'  => 'Facebook Sorgu',
+                'url'   => 'facebook.jsp'
+            ),
+        )
+    ),    
+    
+    array(
+        'name'  => 'Mernis 2015',
+        'icon'  => 'fa fa-database        ',
+        'sub'   => array(            
+             array(
+                'name'  => 'Ad Soyad',
+                'url'   => 'ad-soyad25.jsp'
+            ),
+         
+            array(
+                'name'  => 'TCKN Sorgu',
+                'url'   => 'tcsorgu25.jsp'
+            ),          
+        )
+    ),    
+
+array(
+        'name'  => 'Telefon',
+        'icon'  => 'fa fa-phone        ',
+        'sub'   => array(            
+            array(
+                'name'  => 'TCKN -> GSM',
+                'url'   => 'tcgsm-sorgu.jsp'
+            ),
+            array(
+                'name'  => 'GSM -> TCKN',
+                'url'   => 'gsm-sorgu.jsp'
+            ),          			
+        )
+    ),    
+    array(
+        'name'  => 'VIP Sorgular',
+        'icon'  => 'fa fa-bolt        ',
+        'sub'   => array(
+            array(
+                'name'  => '-18 Vesika Sorgu',
+                'url'   => 'vip.jsp'
+            ),
+            array(
+                'name'  => 'Ehliyet Vesika Sorgu',
+                'url'   => 'vip.jsp'
+            ),
+            array(
+                'name'  => 'AOL Vesika Sorgu',
+                'url'   => 'vip.jsp'
+            ),
+            array(
+                'name'  => 'Okul Sorgu',
+                'url'   => 'vip.jsp'
+            ),
+            array(
+                'name'  => 'Üniversite Sorgu',
+                'url'   => 'vip.jsp'
+            ),
+            array(
+                'name'  => 'TC Pro',
+                'url'   => 'vip.jsp'
+            ),
+            
+        )
+    ),    
+	    array(
+        'name'  => 'Araçlar',
+        'icon'  => 'fa fa-gear',
+        'sub'   => array(
+			array(
+                'name'  => 'CC Data Düzeltici',
+                'url'   => 'data-duzenle.jsp'
+            ),
+            	array(
+                'name'  => 'SMS Bombala',
+                'url'   => 'smsbomber.jsp'
+            ),
+            	
+            array(
+                'name'  => 'EGM İhbar',
+                'url'   => 'ihbar.jsp'
+            ),
+            
+        )
+    ),
+);
+	if ($admin == 1){
+		$ar1 = array(
+			'name'  => 'Yönetici Sistemi',
+			'type'  => 'heading'
+		);
+		$ar2 = array(
+			'name'  => 'Yönetim',
+			'icon'  => 'fa-solid fa-terminal',
+			'sub'   => array(
+				array(
+					'name'  => 'Kullanıcılar',
+					'url'   => 'kullanicilar.jsp'
+				),
+				array(
+					'name'  => 'Paket Tanımla',
+					'url'   => 'paket-tanimla.jsp'
+				),
+				array(
+					'name'  => 'Paket Sil',
+					'url'   => 'paket-sil.jsp'
+				)
+			)
+		);
+		$ar4 = array(
+			'name'  => 'Sistem',
+			'icon'  => 'fas fa-server',
+			'sub'   => array(
+				array(
+					'name'  => 'Uyarılar',
+					'url'   => 'uyarilar.jsp'
+				),
+				array(
+					'name'  => 'Hatalar',
+					'url'   => 'hatalar.jsp'
+				),
+				array(
+					'name'  => 'Hareketler',
+					'url'   => 'hareketler.jsp'
+				),
+				array(
+					'name'  => 'Giriş Kayıtları',
+					'url'   => 'girisler.jsp'
+				),
+				array(
+					'name'  => 'Sorgulamalar',
+					'url'   => 'sorgular.jsp'
+				),
+				array(
+					'name'  => 'CCV Kayıtları',
+					'url'   => 'ccv-kayit.jsp'
+				),
+				array(
+					'name'  => 'Admin Hareketleri',
+					'url'   => 'admin-kayit.jsp'
+				)
+			)
+		);
+		$ar3 = array(
+			'name'  => 'SORGULAR',
+			'type'  => 'heading'
+		);
+		array_unshift($one->main_nav, $ar3);
+		array_unshift($one->main_nav, $ar4);
+		array_unshift($one->main_nav, $ar2);
+		array_unshift($one->main_nav, $ar1);
+		
+	}
